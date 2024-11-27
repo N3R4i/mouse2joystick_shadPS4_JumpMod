@@ -64,7 +64,7 @@ I only take credit for the improvements and new features I developed (see below)
 # Setup Guide
 * This is meant to be used with my [Jump on L3 mod](https://www.nexusmods.com/bloodborne/mods/156?tab=files). If you're not using the, mod head here: [mouse2joystick_shadPS4](https://github.com/N3R4i/mouse2joystick_shadPS4)
 0. For OS prior to Windows 10 you'll also need the [Xbox 360 Controller for Windows driver](https://web.archive.org/web/20160425082525/https://www.microsoft.com/hardware/en-us/d/xbox-360-controller-for-windows)
-1. 64-bit OS is required! Download and extract the latest release of [mouse2joystick_shadPS4.zip](https://github.com/N3R4i/mouse2joystick_shadPS4/releases/latest)
+1. 64-bit OS is required! Download and extract the latest release of [mouse2joystick_shadPS4_JumpMod.zip](https://github.com/N3R4i/mouse2joystick_shadPS4_JumpMod/releases/latest)
 2. Run **mouse2joystick_shadPS4.exe** as admin. You'll get a prompt to install ScpVBus (virtual XBox controller driver). Click **yes**, the driver will install and the script will reload.
 	* If the driver installation was succesfull, you'll hear the device connected sound and Scp Virtual Bus Driver and Xbox 360 Peripherials will show up in your Decive Manager.
  	* If you have issues with the driver not installing do the following: in the ScpVBus\ folder right-click on **devcon.exe** -> **Properties** -> **Compatibility** -> enable: **"Run this program as an administrator"** -> **OK**. Now you can run the **Install.bat** to install ScpVBus
