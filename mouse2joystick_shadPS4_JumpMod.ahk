@@ -1,6 +1,6 @@
 ﻿;	;	;	;	;	;	;	;	;	;	;	;	;	;	;	;
 ;	Modified for shadPS4 by: N3R4i (https://github.com/N3R4i/)
-;	Last Modified Date: 2024-11-27
+;	Last Modified Date: 2024-11-30
 ; 
 ;	Original Author: Helgef
 ;	Date: 2016-08-17
@@ -28,7 +28,7 @@
 ;			evilC - CvJoyInterface.ahk
 ;			CemuUser8 - CvGenInterface.ahk (modified version of CvJoyInterface.ahk with vXBox device support)
 ;
-version := "v1.0"
+version := "v1.1"
 #NoEnv  																; Recommended for performance and compatibility with future AutoHotkey releases.
 SendMode Input															; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  											; Ensures a consistent starting directory.
@@ -967,19 +967,19 @@ mouse2joystick(r,dr,OX,OY) {
 		X:=round(X*(r-dr)/RR)
 		Y:=round(Y*(r-dr)/RR)
 		RR:=sqrt(X**2+Y**2)
-		MouseMove,X+OX,Y+OY 					; Calculate point on controller circle, move back to screen/window coords, and move mouse.
+		DllCall("SetCursorPos", "int", X+OX, "int", Y+OY)	; Calculate point on controller circle, move back to screen/window coords, and move mouse. N3R4i: Changed from MouseMove to DllCall. This fixes real mouse button input being sent instead of the assigned hotkey, and also fixes the mouse not working after turning off the script
 	}
 	
 	; Calculate angle
 	phi:=getAngle(X,Y)
-	MouseMove,OX,OY	;adding one more MouseMove here makes the cursor jump back to the center more consistently, which reduces the occasional camera stutter
+	DllCall("SetCursorPos", "int", OX, "int", OY)	;adding one more DllCall(MouseMove) here makes the cursor jump back to the center more consistently, which reduces the occasional camera stutter
 	
 	IF (RR>k*r AND !AlreadyDown) 								; Check If outside inner circle/deadzone.
 		action(phi,((RR-k*r)/(r-k*r))**nnp)		; nnp is a non-linearity parameter.	
 	Else
 		setStick(0,0)							; Stick in equllibrium.
 
-	MouseMove,OX,OY
+	DllCall("SetCursorPos", "int", OX, "int", OY)
 }
 
 action(phi,tilt) {	
