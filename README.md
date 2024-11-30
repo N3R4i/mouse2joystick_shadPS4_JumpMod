@@ -1,4 +1,4 @@
-Version 1.0
+Version 1.1
 
 **SETUP GUIDE AT THE BOTTOM**
 
@@ -15,6 +15,7 @@ I only take credit for the improvements and new features I developed (see below)
  * **"SR40" bug fix.** There was a bug that caused the stick to tilt more than it should when the mouse was moved at an angle. My fix makes the mouse input way more consistent. Easiest to explain with pictures:
 
 ![Explanation](https://i.imgur.com/fnWZudi.png)
+* Fix for mouse clicks not working after turning off the script
 
 # New features
  * **Deadzone compensation** - Allows the user to entirely eliminate the ingame deadzone. The value (between 0-1) represents the position where the stick tilt will start when the mouse is moved. Should be set the same as the ingame deadzone (which can be found by trial and error). Bloodborne has a fairly large deadzone, around 0.37. This means you have to tilt the stick to at least 37% of its full range, otherwise no camera movement is registered. So, if you set this to 0.37 then any mouse movement will cause the stick to start at 37% of its full range, thus eliminating the deadzone. If set to 1 then any mouse movement will cause full stick tilt.
@@ -58,8 +59,9 @@ I only take credit for the improvements and new features I developed (see below)
  * **Extra Settings** - apart from the self explanatory hide cursor option, these are not tested with shadPS4 and probably won't work.
 
 ## Known issues
- * After using the script for a while, then toggling if off, mouse buttons stop working (mouse can still move). User can only click on the game window. Workaround: press **ctrl+alt+del** then **esc** to fix this state.
- * Slight compatibility issue with the shadPS4 forks that have m/kb input: pressing an unbound key drops your mouse2joystick input.
+* ~~After using the script for a while, then toggling if off, mouse buttons stop working (mouse can still move). User can only click on the game window. Workaround: press **ctrl+alt+del** then **esc** to fix this state.~~
+* ~~Slight compatibility issue with the shadPS4 forks that have m/kb input: pressing an unbound key drops your mouse2joystick input.~~
+* Fixed all issues with the latest update
 
 # Setup Guide
 * This is meant to be used with my [Jump on L3 mod](https://www.nexusmods.com/bloodborne/mods/156?tab=files). If you're not using the, mod head here: [mouse2joystick_shadPS4](https://github.com/N3R4i/mouse2joystick_shadPS4)
