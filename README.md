@@ -1,3 +1,5 @@
+## New/Better version here --> [MKB2Controller](https://github.com/N3R4i/MKB2Controller)
+
 Version 1.1
 
 **SETUP GUIDE AT THE BOTTOM**
